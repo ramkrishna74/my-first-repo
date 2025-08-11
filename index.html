@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tiny To-Do</title></head>
+<body>
+  <h3>Tiny To-Do</h3>
+  <input id="task" placeholder="New task" />
+  <button onclick="add()">Add</button>
+  <ul id="list"></ul>
+
+  <script>
+    function add() {
+      let val = document.getElementById('task').value.trim();
+      if(!val) return alert('Enter task');
+      let li = document.createElement('li');
+      li.textContent = val;
+      li.onclick = () => li.style.textDecoration = li.style.textDecoration === 'line-through' ? 'none' : 'line-through';
+      document.getElementById('list').appendChild(li);
+      document.getElementById('task').value = '';
+    }
+  </script>
+</body>
+</html>
+
