@@ -2,9 +2,11 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def hello():
-    return '✅ Hello from Flask on OpenShift using S2I Python Builder!'
+    return "Hello, OpenShift!"
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+# Optional: local testing support
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
+
